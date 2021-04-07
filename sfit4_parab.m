@@ -1,3 +1,4 @@
+function [A_opt, B_opt, C_opt, w_opt] = sfit4_parab(x, w0, dw)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATLAB implementation of four-parameter Least Squares sine        %%%
 %%% fitting method proposed in "A Computationally Efficient           %%%
@@ -12,12 +13,11 @@
 %%%                                                                   %%%
 %%% Output parameters: Optimal sine parameters of the fitting         %%%
 %%%                                                                   %%%
-%%% Written by: Balázs Renczes                                        %%%
+%%% Written by: BalÃ¡zs Renczes                                        %%%
 %%%                                                                   %%%
 %%% Last modified: April 7, 2021                                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [A_opt, B_opt, C_opt, w_opt] = sfit4_parab(x, w0, dw)
 s = size(x);
 if (s(2) > s(1))     % We ensure that x is a column vector
     x = x.';
