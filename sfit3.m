@@ -1,3 +1,4 @@
+function [A, B, C] = sfit3(w, x)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATLAB implementation of three Least Squares sine fitting method  %%%
 %%%                                                                   %%%
@@ -9,12 +10,10 @@
 %%%                                                                   %%%
 %%% Output parameters: Optimal sine parameters of the fitting         %%%
 %%%                                                                   %%%
-%%% Written by: Balázs Renczes                                        %%%
+%%% Written by: BalÃ¡zs Renczes                                        %%%
 %%%                                                                   %%%
 %%% Last modified: April 7, 2021                                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-function [A, B, C] = sfit3(w, x)
 
 s = size(x);
 if (s(2) > s(1))     % We ensure that x is a column vector
