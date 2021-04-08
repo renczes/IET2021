@@ -1,4 +1,4 @@
-function [A, B, C] = sfit3(w, x)
+function [A, B, C] = LS3p(w, x)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATLAB implementation of three Least Squares sine fitting method  %%%
 %%%                                                                   %%%
