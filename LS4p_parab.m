@@ -1,4 +1,4 @@
-function [A_opt, B_opt, C_opt, w_opt] = sfit4_parab(x, w0, dw)
+function [A_opt, B_opt, C_opt, w_opt] = LS4p_parab(x, w0, dw)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATLAB implementation of four-parameter Least Squares sine        %%%
 %%% fitting method proposed in "A Computationally Efficient           %%%
@@ -29,7 +29,7 @@ n = (1:N).';
 %%% A three-parameter least squares fitting is perfomred at w0, which %%%
 %%% is usually the interpolated FFT estimator.                        %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[A_ipfft, B_ipfft, C_ipfft] = sfit3(w0, x);
+[A_ipfft, B_ipfft, C_ipfft] = LS3p(w0, x);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The fitting is performed with the obtained parameter set. Then    %%%
@@ -44,11 +44,11 @@ CF_ipfft = e_ipfft.'*e_ipfft;
 %%% The procedure is repeated at w0-dw and at w0+dw                   %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[A1, B1, C1] = sfit3(w0-dw, x);
+[A1, B1, C1] = LS3p(w0-dw, x);
 y1 = C1 + A1*cos((w0 - dw)*n) + B1*sin((w0 - dw)*n);
 e1 = x-y1;
 CF1 = e1.'*e1;
-[A2, B2, C2] = sfit3(w0+dw, x);
+[A2, B2, C2] = LS3p(w0+dw, x);
 y2 = C2 + A2*cos((w0 + dw)*n) + B2*sin((w0 + dw)*n);
 e2 = x-y2;
 CF2 = e2.'*e2;
@@ -68,7 +68,7 @@ w_opt = w0 + dw_opt;
 %%% optimal frequency.                                                %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[A_opt, B_opt, C_opt] = sfit3(w_opt, x);
+[A_opt, B_opt, C_opt] = LS3p(w_opt, x);
 y_opt = C_opt + A_opt*cos(n*w_opt) + B_opt*sin(n*w_opt);
 e_opt = x - y_opt;
 CF_opt = e_opt.'*e_opt;
