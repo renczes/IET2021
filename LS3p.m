@@ -12,7 +12,7 @@ function [A, B, C] = LS3p(w, x)
 %%%                                                                   %%%
 %%% Written by: Balázs Renczes                                        %%%
 %%%                                                                   %%%
-%%% Last modified: April 7, 2021                                      %%%
+%%% Last modified: April 8, 2021                                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 s = size(x);
