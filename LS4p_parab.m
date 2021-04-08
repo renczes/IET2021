@@ -15,7 +15,7 @@ function [A_opt, B_opt, C_opt, w_opt] = LS4p_parab(x, w0, dw)
 %%%                                                                   %%%
 %%% Written by: Balázs Renczes                                        %%%
 %%%                                                                   %%%
-%%% Last modified: April 7, 2021                                      %%%
+%%% Last modified: April 8, 2021                                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 s = size(x);
