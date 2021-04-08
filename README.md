@@ -5,6 +5,9 @@ Source files for "A Computationally Efficient Non-iterative Four-parameter Sine 
 
 - LS3p - Evaluates 3-parameter LS sine fitting implemented in C/MATLAB. Supplementary file for LS4p_parab
 
+Written by Balázs Renczes and Vilmos Pálfi
+Last modified: April 8, 2021
+
 
 
 
